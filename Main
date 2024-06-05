@@ -1,0 +1,41 @@
+local Parcel = require(9428572121)
+
+if Parcel:Whitelist("65fb50e4f73553306b7ad340", "cw2er3gpk5bcfaq1g0aiayk4gep9") then
+	local booting = script.Parent.Parent.Booting
+	local boot1 = script.Parent.Parent.Parent.Screen.Booting["1"]
+	local boot2 = script.Parent.Parent.Parent.Screen.Booting["2"]
+	local boot3 = script.Parent.Parent.Parent.Screen.Booting["3"]
+	local menu = script.Parent.Parent.Booting.Menu
+
+
+	-- BOOTING
+	booting.Enabled = true
+	boot1.Visible = true
+	wait(30)
+	boot1.Visible = false
+	wait(10)
+	boot2.Visible = true
+	wait(5)
+	script.Parent.Parent.Sounds.Booting.PlaybackSpeed = 0.8
+	script.Parent.Parent.Sounds.Booting:Play()
+	wait(20)
+	boot2.Visible = false
+	wait(1)
+	boot3.Visible = true
+	script.Parent.Parent.Sounds.Windows.PlaybackSpeed = 0.8
+	script.Parent.Parent.Sounds.Windows:Play()
+	wait(20)
+	boot3.Visible = false
+
+	-- MAIN
+	wait(1)
+	menu.Visible = true
+
+
+	-- DISABLING THIS SCRIPT
+	script.Enabled = false
+	print("TST | Scripts loaded.")
+else
+	warn("Please stop using TsT coblox menu version.")
+	script:Destroy()
+end
